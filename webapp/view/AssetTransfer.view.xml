@@ -1,0 +1,201 @@
+<mvc:View xmlns:smartfield="sap.ui.comp.smartfield" xmlns:odata="sap.ui.comp.odata"
+    xmlns:cards="sap.f.cards"
+    controllerName="project1.controller.AssetTransfer"
+    height="100%"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:T="sap.ui.table"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+	xmlns:a="sap.ui.core.Control"
+>
+
+    <Page
+        id="_Asset_Form"
+        class="sapUiFioriObjectPage" title=""
+        showHeader="true" showNavButton="true" navButtonPress=".navBack"
+    >
+      <Panel
+                            id="assetTransferPanel"
+                            headerText="Asset Transfer Details"
+                            expandable="false"
+                            class="sapUiResponsiveMargin">
+        <content>
+        
+            <f:SimpleForm
+                   id="assetTransferForm"
+                                    editable="true"
+                                    layout="ResponsiveGridLayout"
+
+                                    labelSpanXL="4"
+                                    labelSpanL="4"
+                                    labelSpanM="4"
+                                    labelSpanS="12"
+
+                                    adjustLabelSpan="false"
+
+                                    emptySpanXL="0"
+                                    emptySpanL="0"
+                                    emptySpanM="0"
+                                    emptySpanS="0"
+
+                                    columnsXL="2"
+                                    columnsL="2"
+                                    columnsM="1"
+
+                                    singleContainerFullSize="false">
+                <f:content>
+             
+                  <Label text="Company Code" />
+                    <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/CompanyCode}"
+                        id="CflCompany"
+                        showValueHelp="true"
+                        valueHelpRequest="FillCompanyCFL"
+                         enabled="{EnbDisModal>/ECompanyCode}"
+                        
+                    />
+
+                    <Label text="Fix AssetCode" />
+                    <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/AssetCode}"
+                        id="AssetCFL"
+                        showValueHelp="true"
+                          valueHelpRequest="FillAssetCFL"     
+                            placeholder="Select AssetCode"
+                           
+                            enabled="{EnbDisModal>/EAssetCode}"
+                    />
+
+                    <Label text="Sub Asset" />
+                    <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/SubAsset}"
+                        id="_SubAsset"
+                         enabled="false"
+                    />
+
+                    <Label text="TransferDate" />
+                  <DatePicker id="datePicker" value="{EntryFormDataSourceModel>/TransferDate}" displayFormat="dd.MM.yyyy" valueFormat="yyyy-MM-dd" placeholder="{i18n>datePicker}"/>
+                  <Label
+                        text="CostCenter To"
+                        
+                    />
+                    
+                     <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/CostCenter}"
+                        id="CostCenterCFL"
+                        showValueHelp="true"
+                        valueHelpRequest="FillCostCenterCFL"
+                         enabled="{EnbDisModal>/ECostCenter}"
+                    />
+                      <Label
+                        text="Location Code"
+                    />
+                    
+                    <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/LocationCode}"
+                        id="LocationCFL"
+                        valueHelpRequest="FillLocationCFL"
+                        showValueHelp="true"
+                         enabled="{EnbDisModal>/ELocationCode}"
+                    />
+                      <Label
+                        text="Location Description"
+                    />
+                    <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/LocationDsc}"                      
+                         enabled="false"
+                    />
+
+                  
+                  
+                    
+
+                    <Label
+                        text="Transporter Name"
+                        labelFor="_Transporter"
+                    />
+                  
+                   <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/TransporterNM}"
+                        id="_Transporter"
+                         enabled="{EnbDisModal>/ETransporter}"
+                    />
+                    
+                     <Label
+                        text="Tag No"
+                        
+                    />
+                    
+                     <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/TagNo}"
+                        id="_TagNo"
+                         enabled="{EnbDisModal>/ETagNo}"
+                    />
+                       <Label
+                        text="Serial Number"
+                        
+                    />
+                    
+                     <Input
+                        fieldGroupIds=" "
+                        value="{EntryFormDataSourceModel>/Serial}"
+                        id="_Serial"
+                         enabled="{EnbDisModal>/ESerial}"
+                    />
+                   
+
+                  
+                    
+                </f:content>
+            </f:SimpleForm>
+	
+         
+        </content>
+       </Panel>
+       
+
+         <footer>
+            <Toolbar>
+                <content>
+                    
+                    
+                    
+                    <ToolbarSpacer ></ToolbarSpacer>
+                     <Button
+                        id="submit"
+                        text="Submit"
+                        press="onSave"
+                        type="Accept"
+                         enabled="{EnbDisModal>/BtnSubmitEnable}"
+                        width="10%"
+                    />
+                    <Button
+                        id="cancel1"
+                        text="Cancel"
+                        press="onCancel"
+                        width="10%"
+                    />
+                    
+                    
+                   
+
+                 
+                </content>
+            </Toolbar>
+        </footer>
+  
+         </Page>
+
+ </mvc:View>

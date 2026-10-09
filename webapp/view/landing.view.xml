@@ -1,0 +1,18 @@
+<mvc:View controllerName="project1.controller.landing"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+     <ScrollContainer vertical="true" height="100%" id="scTop">	
+            <GenericTile id="gt1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Asset Transfer"
+                subheader="Manage" press="clickAsset" url="https://www.sap.com/">
+                <TileContent id="tc1">
+                    <ImageContent id="ic1" src="sap-icon://employee" />
+                </TileContent>
+            </GenericTile>
+
+           
+
+
+	</ScrollContainer>   
+    </Page>
+</mvc:View>
