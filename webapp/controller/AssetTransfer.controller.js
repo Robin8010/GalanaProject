@@ -216,7 +216,7 @@ let _LineTotal=0;
         {
             debugger;
             await   this.onAssetPost();
-           
+           //
         },
           
    onAssetPost: async function () {
